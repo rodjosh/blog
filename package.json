@@ -1,0 +1,11 @@
+{
+  "name": "blogging-platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rodjosh/blogging-platform.git",
+  "author": "Joshua Rodriguez",
+  "license": "MIT",
+  "volta": {
+    "node": "16.14.2"
+  }
+}
