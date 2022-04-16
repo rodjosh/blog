@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   styledComponents: true,
+  compiler: {
+    styledComponents: true
+  }
 };
 
 module.exports = nextConfig;
