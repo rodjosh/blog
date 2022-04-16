@@ -7,5 +7,22 @@
   "license": "MIT",
   "volta": {
     "node": "16.14.2"
+  },
+  "scripts": {
+    "build": "concurrently \"yarn build-next\" \"yarn build-strapi\"",
+    "build-next": "cd ./client && yarn install && yarn build",
+    "build-strapi": "cd ./server && yarn install && yarn build",
+    "start": "concurrently \"yarn start-next\" \"yarn start-strapi\"",
+    "start-next": "cd ./client && yarn start",
+    "start-strapi": "cd ./server && yarn start",
+    "dev": "concurrently \"yarn dev-next\" \"yarn dev-strapi\"",
+    "dev-next": "cd ./client && yarn dev",
+    "dev-strapi": "cd ./server && yarn develop"
+  },
+  "engines": {
+    "yarn": "1.22.18"
+  },
+  "dependencies": {
+    "concurrently": "^7.1.0"
   }
 }
