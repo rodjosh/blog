@@ -9,8 +9,7 @@
     "node": "16.14.2"
   },
   "scripts": {
-    "build": "yarn install",
-    "build-previous": "yarn build-next && yarn build-strapi",
+    "build": "yarn build-next && yarn build-strapi",
     "build-next": "cd ./client && yarn install && yarn build",
     "build-strapi": "cd ./server && yarn install && yarn build",
     "start": "concurrently \"yarn start-next\" \"yarn start-strapi\"",
