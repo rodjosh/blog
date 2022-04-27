@@ -1,5 +1,7 @@
+import Text from "components/Atoms/Text";
+
 const HomePage = () => {
-    return <h1>Hello World</h1>
-}
+  return <Text>Hello World</Text>;
+};
 
 export default HomePage;
