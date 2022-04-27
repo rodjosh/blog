@@ -16,7 +16,9 @@
     "build-next": "cd ./client && yarn install && yarn build",
     "build-strapi": "cd ./server && yarn install && yarn build",
     "start-next": "cd ./client && yarn start",
-    "start-strapi": "cd ./server && yarn start"
+    "start-strapi": "cd ./server && yarn start",
+    "storybook": "cd ./client && yarn storybook",
+    "build-storybook": "cd ./client && yarn build-storybook"
   },
   "engines": {
     "yarn": "1.22.18"
