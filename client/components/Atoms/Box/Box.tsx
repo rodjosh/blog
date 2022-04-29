@@ -27,3 +27,5 @@ const Box = ({
         </StyleBox>
     )
 }
+
+export default Box
