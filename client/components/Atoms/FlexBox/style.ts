@@ -1,7 +1,8 @@
 import { string } from "prop-types";
 import styled from "styled-components";
 
-import BoxProps from "../Box/style";
+import { StyleBox } from "../Box/style";
+import { BoxProps } from "../Box/style";
 
 interface FlexBoxProps extends BoxProps {
 	$flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
@@ -46,9 +47,7 @@ interface FlexBoxProps extends BoxProps {
 	$display: "flex";
 }
 
-export const StyleFlexBox = styled.div<FlexBoxProps>`
-	margin: ${({ $margin }) => $margin ?? "0"};
-	padding: ${({ $padding }) => $padding ?? "0"};
+export const StyleFlexBox = styled(StyleBox)<FlexBoxProps>`
 	display: "flex";
 	flex-direction: ${({ $flexDirection }) => $flexDirection ?? "row"};
 	flex-wrap: ${({ $flexWrap }) => $flexWrap ?? "nowrap"};

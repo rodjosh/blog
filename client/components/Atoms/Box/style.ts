@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default interface BoxProps {
+export interface BoxProps {
 	$margin?: string;
 	$padding?: string;
 	$display?: string;

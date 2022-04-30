@@ -1,10 +1,9 @@
 import { BaseComponentProps } from "types/props";
 
 import { StyleFlexBox } from "./style";
+import {BoxProps2} from '../Box/Box';
 
-interface FlexBoxProps extends BaseComponentProps {
-    margin?: string;
-    padding?: string;
+interface FlexBoxProps extends BoxProps2 {
     display?: "flex";
     flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
 	flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
@@ -60,7 +59,11 @@ interface FlexBoxProps extends BaseComponentProps {
     justifyContent,
     alignItems,
     alignContent,
-    gap
+    gap,
+	order,
+    flexShrink,
+    flexBasis,
+    alignSelf
 }: FlexBoxProps) => {
     return (
         <StyleFlexBox
@@ -70,10 +73,15 @@ interface FlexBoxProps extends BaseComponentProps {
             $display = "flex"
             $flexDirection = {flexDirection}
             $flexWrap = {flexWrap}
+			$flexGrow = {flexGrow}
             $justifyContent ={justifyContent} 
             $alignItems={alignItems} 
             $alignContent={alignContent}
             $gap={gap} 
+			$order ={order}
+            $flexShrink={flexShrink}
+            $flexBasis={flexBasis}
+            $alignSelf={alignSelf}
             >
                 {children}
         </StyleFlexBox>
