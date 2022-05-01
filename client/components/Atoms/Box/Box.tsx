@@ -2,7 +2,7 @@ import { BaseComponentProps } from "types/props";
 
 import { StyleBox } from "./style";
 
-export interface BoxProps2 extends BaseComponentProps {
+export interface BoxProps extends BaseComponentProps {
     margin?: string;
     padding?: string;
     display?: string;
@@ -30,7 +30,7 @@ const Box = ({
     flexShrink,
     flexBasis,
     alignSelf
-}: BoxProps2) => {
+}: BoxProps) => {
     return (
         <StyleBox
             className={`atom-box ${className}`}
