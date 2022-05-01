@@ -63,7 +63,6 @@ interface FlexBoxProps extends BoxProps{
 }: FlexBoxProps) => {
     return (
         <StyleFlexBox
-            $display = "flex"
             $flexDirection = {flexDirection}
             $flexWrap = {flexWrap}
             $justifyContent ={justifyContent} 
