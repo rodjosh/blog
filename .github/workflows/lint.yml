@@ -10,4 +10,6 @@ jobs:
       uses: actions/setup-node@v3.1.1
       with:
         node-version: '14'
-    - run: ls && cd client && npm install && npm run lint
+    - name: Run frontend linting
+      working-directory: ./client
+      run: ls && cd client && npm install && npm run lint
