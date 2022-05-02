@@ -11,5 +11,5 @@ jobs:
       with:
         node-version: '14'
     - name: Run frontend linting
-      working-directory: ../client
-      run: ls && cd client && npm install && npm run lint
+      working-directory: ./client
+      run: npm install && npm run lint
