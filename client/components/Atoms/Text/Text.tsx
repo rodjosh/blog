@@ -4,28 +4,31 @@ import { BaseComponentProps } from "types/props";
 import { StyleText } from "./style";
 
 interface TextProps extends BaseComponentProps {
-  size?: number; //px
-  lineHeight?: number;
-  color?: ColorVariants;
+	size?: string; //px
+	lineHeight?: string;
+	color?: ColorVariants;
+	fontWeight?: number;
 }
 
 const Text = ({
-  size,
-  lineHeight,
-  color,
-  className = "",
-  children,
+	size,
+	lineHeight,
+	color,
+	className = "",
+	children,
+	fontWeight,
 }: TextProps) => {
-  return (
-    <StyleText
-      className={`atom-text ${className}`}
-      $color={color}
-      $lineHeight={lineHeight}
-      $size={size}
-    >
-      {children}
-    </StyleText>
-  );
+	return (
+		<StyleText
+			className={`atom-text ${className}`}
+			$color={color}
+			$lineHeight={lineHeight}
+			$size={size}
+			$fontWeight={fontWeight}
+		>
+			{children}
+		</StyleText>
+	);
 };
 
 export default Text;
