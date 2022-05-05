@@ -1,4 +1,4 @@
 export interface BaseComponentProps {
-	className?: string;
-	children?: JSX.Element | string | JSX.Element[];
+  className?: string;
+  children?: JSX.Element | string | JSX.Element[];
 }
