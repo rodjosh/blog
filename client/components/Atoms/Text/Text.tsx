@@ -3,7 +3,7 @@ import { BaseComponentProps } from "types/props";
 
 import { StyleText } from "./style";
 
-interface TextProps extends BaseComponentProps {
+export interface TextProps extends BaseComponentProps {
   size?: string; //px
   lineHeight?: string;
   color?: ColorVariants;

@@ -1,6 +1,9 @@
 import ButtonLink from "components/Atoms/ButtonLink";
 import FlexBox from "components/Atoms/FlexBox";
 import Text from "components/Atoms/Text";
+
+import { TextNavItem } from "components/Organisms/Navbar/variants";
+
 import { links } from "data/links";
 
 const Navbar = () => {
@@ -11,18 +14,18 @@ const Navbar = () => {
           Tozi
         </Text>
       </ButtonLink>
+
       <FlexBox justifyContent="center" gap="1rem">
         {links.map((link) => (
           <ButtonLink key={link.label} href={link.link}>
-            <Text fontWeight={700} size="1.25rem" lineHeight="1.55rem">
-              {link.label}
-            </Text>
+            <TextNavItem>{link.label}</TextNavItem>
           </ButtonLink>
         ))}
       </FlexBox>
+
       <ButtonLink href="">
         <Text fontWeight={700} size="1.25rem" lineHeight="1.55rem">
-          login/Register
+          Login / Register
         </Text>
       </ButtonLink>
     </FlexBox>
