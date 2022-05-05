@@ -1,8 +1,8 @@
 import Component from "./Button";
 
 const config = {
-	title: "Atoms/Button",
-	component: Component,
+  title: "Atoms/Button",
+  component: Component,
 };
 
 export default config;
