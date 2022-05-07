@@ -1,3 +1,4 @@
+import Button from "components/Atoms/Button";
 import ButtonLink from "components/Atoms/ButtonLink";
 import FlexBox from "components/Atoms/FlexBox";
 import Text from "components/Atoms/Text";
@@ -8,9 +9,9 @@ import { links } from "data/links";
 
 const Navbar = () => {
   return (
-    <FlexBox justifyContent="space-between">
+    <FlexBox justifyContent="space-between" padding={20}>
       <ButtonLink href="#">
-        <Text fontWeight={700} size="2.25rem" lineHeight="46px">
+        <Text fontWeight={700} size={35}>
           Tozi
         </Text>
       </ButtonLink>
@@ -23,11 +24,19 @@ const Navbar = () => {
         ))}
       </FlexBox>
 
-      <ButtonLink href="">
-        <Text fontWeight={700} size="1.25rem" lineHeight="1.55rem">
-          Login / Register
-        </Text>
-      </ButtonLink>
+      <FlexBox alignContent="center" gap="10px">
+        <Button>
+          <TextNavItem>Login</TextNavItem>
+        </Button>
+
+        <FlexBox alignSelf="center">
+          <TextNavItem>/</TextNavItem>
+        </FlexBox>
+
+        <Button>
+          <TextNavItem>Register</TextNavItem>
+        </Button>
+      </FlexBox>
     </FlexBox>
   );
 };

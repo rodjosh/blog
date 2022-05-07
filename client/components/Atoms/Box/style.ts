@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 interface BoxProps {
-  $margin?: string;
-  $padding?: string;
+  $margin?: number;
+  $padding?: number;
   $display?: string;
   $order?: number;
   $flexGrow?: number;
@@ -18,8 +18,8 @@ interface BoxProps {
 }
 
 export const StyleBox = styled.div<BoxProps>`
-  margin: ${({ $margin }) => $margin ?? "0"};
-  padding: ${({ $padding }) => $padding ?? "0"};
+  margin: ${({ $margin }) => $margin ?? "0"}px;
+  padding: ${({ $padding }) => $padding ?? "0"}px;
   display: ${({ $display }) => $display ?? "block"};
   order: ${({ $order }) => $order ?? "0"};
   flex-grow: ${({ $flexGrow }) => $flexGrow ?? "unset"};
