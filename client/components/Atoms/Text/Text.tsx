@@ -4,10 +4,11 @@ import { BaseComponentProps } from "types/props";
 import { StyleText } from "./style";
 
 export interface TextProps extends BaseComponentProps {
-  size?: string; //px
-  lineHeight?: string;
+  size?: number; //px
+  lineHeight?: number;
   color?: ColorVariants;
   fontWeight?: number;
+  margin?: string;
 }
 
 const Text = ({
@@ -17,6 +18,7 @@ const Text = ({
   className = "",
   children,
   fontWeight,
+  margin,
 }: TextProps) => {
   return (
     <StyleText
@@ -25,6 +27,7 @@ const Text = ({
       $lineHeight={lineHeight}
       $size={size}
       $fontWeight={fontWeight}
+      $margin={margin}
     >
       {children}
     </StyleText>

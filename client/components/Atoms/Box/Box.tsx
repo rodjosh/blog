@@ -3,8 +3,8 @@ import { BaseComponentProps } from "types/props";
 import { StyleBox } from "./style";
 
 export interface BoxProps extends BaseComponentProps {
-  margin?: string;
-  padding?: string;
+  margin?: number; // px
+  padding?: number; // px
   display?:
     | "block"
     | "inline-block"
