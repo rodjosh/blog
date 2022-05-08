@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 export const colors = {
   white: "#ffffff",
   black: "#000000",
+  grey: "#D3D3D3",
 };
 
 export type ColorVariants = keyof typeof colors;
