@@ -1,8 +1,10 @@
+import { ColorVariants } from "styles/theme";
 import { BaseComponentProps } from "types/props";
 
 import { StyleBox } from "./style";
-
 export interface BoxProps extends BaseComponentProps {
+  height?: number; // px
+  width?: number; // px
   margin?: number; // px
   padding?: number; // px
   display?:
@@ -12,6 +14,8 @@ export interface BoxProps extends BaseComponentProps {
     | "inline-flex"
     | "grid"
     | "inline-grid";
+  borderRadius?: number; //px
+  backgroundColor?: ColorVariants;
   order?: number;
   flexGrow?: number;
   flexShrink?: number;
@@ -26,6 +30,10 @@ export interface BoxProps extends BaseComponentProps {
 }
 
 const Box = ({
+  width,
+  height,
+  borderRadius,
+  backgroundColor,
   margin,
   padding,
   display,
@@ -40,6 +48,9 @@ const Box = ({
   return (
     <StyleBox
       className={`atom-box ${className}`}
+      $width={width}
+      $height={height}
+      $borderRadius={borderRadius}
       $margin={margin}
       $padding={padding}
       $display={display}
