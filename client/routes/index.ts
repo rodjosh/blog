@@ -1,6 +1,6 @@
 const routes = {
-  blog: "/blog",
-  admin: "/admin",
+	blog: "/blog",
+	admin: "/admin",
 };
 
 export default routes;

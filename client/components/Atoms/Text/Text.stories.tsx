@@ -1,8 +1,8 @@
 import Component from "./Text";
 
 const config = {
-  title: "Atoms/Text",
-  component: Component,
+	title: "Atoms/Text",
+	component: Component,
 };
 
 export default config;

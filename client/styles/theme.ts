@@ -9,8 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const colors = {
-  white: "#ffffff",
-  black: "#000000",
+	white: "#ffffff",
+	black: "#000000",
+	grey: "#f5f5f5",
+	blue: "#473bf0",
 };
 
 export type ColorVariants = keyof typeof colors;
