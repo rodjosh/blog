@@ -1,9 +1,20 @@
 import styled from "styled-components";
+import { ColorVariants } from "styles/theme";
 
 interface BoxProps {
+  $height?: number; // px
+  $width?: number; // px
   $margin?: number;
   $padding?: number;
-  $display?: string;
+  $display?:
+    | "block"
+    | "inline-block"
+    | "flex"
+    | "inline-flex"
+    | "grid"
+    | "inline-grid";
+  $borderRadius?: number; //px
+  $backgroundColor?: ColorVariants;
   $order?: number;
   $flexGrow?: number;
   $flexShrink?: number;
@@ -18,8 +29,13 @@ interface BoxProps {
 }
 
 export const StyleBox = styled.div<BoxProps>`
+  height: ${({ $height }) => `${$height}px` ?? "auto"};
+  width: ${({ $width }) => `${$width}px` ?? "auto"};
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor ?? "transparent"};
   margin: ${({ $margin }) => $margin ?? "0"}px;
   padding: ${({ $padding }) => $padding ?? "0"}px;
+  border-radius: ${({ $borderRadius }) => $borderRadius ?? "0"}px;
   display: ${({ $display }) => $display ?? "block"};
   order: ${({ $order }) => $order ?? "0"};
   flex-grow: ${({ $flexGrow }) => $flexGrow ?? "unset"};

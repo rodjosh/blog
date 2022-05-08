@@ -32,17 +32,17 @@ const PrimaryPost = ({
           gap="1rem"
           height={430}
           width={350}
-          borderRadius="15px"
+          borderRadius={15}
         >
           {!img ? (
-            <FlexBox backgroundColor="grey" height={250} width={350}></FlexBox>
+            <FlexBox backgroundColor="grey" height={250} width={350} />
           ) : (
             <Box height={250} width={350}>
-              <Image src={img} alt={imgDesc}></Image>
+              <Image src={img} alt={imgDesc} />
             </Box>
           )}
 
-          <FlexBox flexDirection="column" gap="1rem" padding="26px">
+          <FlexBox flexDirection="column" gap="1rem" padding={26}>
             <Box>
               <TagButton>{TextChild1}</TagButton>
             </Box>
