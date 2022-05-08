@@ -1,8 +1,8 @@
 import Component from "./TagButton";
 
 const config = {
-	title: "Molecules/TagButton",
-	component: Component,
+  title: "Molecules/TagButton",
+  component: Component,
 };
 
 export default config;
