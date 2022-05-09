@@ -1,7 +1,7 @@
 import Component from "./PrimaryPost";
 
 const config = {
-  title: "Organisms/PrimaryPost",
+  title: "Organisms/PrimaryPost - TEMP",
   component: Component,
 };
 

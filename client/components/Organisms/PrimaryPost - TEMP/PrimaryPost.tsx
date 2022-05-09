@@ -1,9 +1,10 @@
+import Link from "next/link";
+import Image from "next/image";
+
 import FlexBox from "components/Atoms/FlexBox";
 import Text from "components/Atoms/Text";
 import TagButton from "components/Molecules/TagButtton";
-import Link from "next/link";
 import Box from "components/Atoms/Box";
-import Image from "next/image";
 
 interface PrimaryPostProps {
   TextChild1?: string;
@@ -26,10 +27,10 @@ const PrimaryPost = ({
 }: PrimaryPostProps) => {
   return (
     <Link href={href} passHref>
-      <a style={{ textDecoration: "none" }}>
+      <a>
         <FlexBox
           flexDirection="column"
-          gap="1rem"
+          gap={20}
           height={430}
           width={350}
           borderRadius={15}
@@ -42,14 +43,14 @@ const PrimaryPost = ({
             </Box>
           )}
 
-          <FlexBox flexDirection="column" gap="1rem" padding={26}>
+          <FlexBox flexDirection="column" gap={20} padding={26}>
             <Box>
               <TagButton>{TextChild1}</TagButton>
             </Box>
             <Text fontWeight={700} size={28}>
               {TitleChild}
             </Text>
-            <FlexBox gap="5rem">
+            <FlexBox justifyContent="space-between">
               <Text size={14}>{DateChild}</Text>
               <Text size={14}>{TimeChild}</Text>
             </FlexBox>
