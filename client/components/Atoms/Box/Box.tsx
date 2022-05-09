@@ -1,44 +1,49 @@
 import { ColorVariants } from "styles/theme";
 import { BaseComponentProps } from "types/props";
 
-import { StyleBox } from "./style";
+import {
+  StyleBox,
+  type Size,
+  type Overflow,
+  type Display,
+  type AlignSelf,
+} from "./style";
+
 export interface BoxProps extends BaseComponentProps {
-  height?: number; // px
-  width?: number; // px
+  display?: Display;
+  overflow?: Overflow;
+
+  height?: Size;
+  width?: Size;
+
   margin?: number; // px
   padding?: number; // px
-  display?:
-    | "block"
-    | "inline-block"
-    | "flex"
-    | "inline-flex"
-    | "grid"
-    | "inline-grid";
+
   borderRadius?: number; //px
   backgroundColor?: ColorVariants;
+
   order?: number;
   flexGrow?: number;
   flexShrink?: number;
   flexBasis?: number | "auto";
-  alignSelf?:
-    | "auto"
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "baseline"
-    | "stretch";
+  alignSelf?: AlignSelf;
 }
 
 const Box = ({
+  display,
+  overflow,
+  className,
+  children,
+
   width,
   height,
-  borderRadius,
-  backgroundColor,
+
   margin,
   padding,
-  display,
-  className = "",
-  children,
+
+  borderRadius,
+  backgroundColor,
+
   order,
   flexGrow,
   flexShrink,
@@ -47,13 +52,15 @@ const Box = ({
 }: BoxProps) => {
   return (
     <StyleBox
-      className={`atom-box ${className}`}
+      $display={display}
+      $overflow={overflow}
+      className={`atom-box ${className ?? ""}`}
       $width={width}
       $height={height}
-      $borderRadius={borderRadius}
       $margin={margin}
       $padding={padding}
-      $display={display}
+      $borderRadius={borderRadius}
+      $backgroundColor={backgroundColor}
       $order={order}
       $flexGrow={flexGrow}
       $flexShrink={flexShrink}
