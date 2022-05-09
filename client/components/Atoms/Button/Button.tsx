@@ -1,27 +1,34 @@
-import { ColorVariants } from "styles/theme";
 import { BaseComponentProps } from "types/props";
 
-import { StyleButton } from "./style";
+import { ColorVariants } from "styles/theme";
+import { type Spacing } from "styles/utils";
+
+import { StyleButton, type BorderStyle } from "./style";
 
 export interface ButtonProps extends BaseComponentProps {
   backgroundColor?: ColorVariants;
-  borderStyle?: string;
-  borderRadius?: string;
+
+  borderStyle?: BorderStyle;
+  borderRadius?: Spacing;
   borderColor?: ColorVariants;
-  borderWidth?: string;
-  padding?: string;
-  margin?: string;
+  borderWidth?: Spacing;
+
+  padding?: Spacing;
+  margin?: Spacing;
 }
 
 const Button = ({
   backgroundColor,
+
   borderStyle,
   borderRadius,
   borderColor,
   borderWidth,
+
   padding,
   margin,
-  className = "",
+
+  className,
   children,
 }: ButtonProps) => {
   return (
@@ -33,7 +40,7 @@ const Button = ({
       $borderWidth={borderWidth}
       $padding={padding}
       $margin={margin}
-      className={`atom-button ${className}`}
+      className={`atom-button ${className ?? ""}`}
     >
       {children}
     </StyleButton>

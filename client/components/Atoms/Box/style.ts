@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { ColorVariants } from "styles/theme";
 
-type Unit = "px" | "%" | "rem" | "em";
+import { colors, ColorVariants } from "styles/theme";
+import { type Size, type Spacing, getSize, getSpacing } from "styles/utils";
 
-export type Size = number | [number, Unit];
 export type Overflow = "visible" | "hidden" | "scroll" | "auto";
 
 export type Display =
@@ -26,13 +25,13 @@ interface BoxProps {
   $height?: Size;
   $width?: Size;
 
-  $margin?: number; //px
-  $padding?: number; //px
+  $margin?: Spacing;
+  $padding?: Spacing;
 
   $overflow?: Overflow;
   $display?: Display;
 
-  $borderRadius?: number; //px
+  $borderRadius?: Spacing;
   $backgroundColor?: ColorVariants;
 
   $order?: number;
@@ -41,22 +40,6 @@ interface BoxProps {
   $flexBasis?: number | "auto";
   $alignSelf?: AlignSelf;
 }
-
-const getSize = (size?: Size) => {
-  if (!size) return "auto";
-
-  if (Array.isArray(size)) {
-    return `${size[0]}${size[1]}`;
-  }
-
-  return `${size}px`;
-};
-
-const getSpacing = (spacing?: number) => {
-  if (!spacing) return "0px";
-
-  return `${spacing}px`;
-};
 
 export const StyleBox = styled.div<BoxProps>`
   display: ${({ $display }) => $display ?? "block"};
@@ -70,7 +53,7 @@ export const StyleBox = styled.div<BoxProps>`
 
   border-radius: ${({ $borderRadius }) => getSpacing($borderRadius)};
   background-color: ${({ $backgroundColor }) =>
-    $backgroundColor ?? "transparent"};
+    colors[$backgroundColor ?? "transparent"]};
 
   flex-grow: ${({ $flexGrow }) => $flexGrow ?? "unset"};
   flex-shrink: ${({ $flexShrink }) => $flexShrink ?? "unset"};

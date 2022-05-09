@@ -1,13 +1,9 @@
-import { ColorVariants } from "styles/theme";
 import { BaseComponentProps } from "types/props";
 
-import {
-  StyleBox,
-  type Size,
-  type Overflow,
-  type Display,
-  type AlignSelf,
-} from "./style";
+import { ColorVariants } from "styles/theme";
+import { type Size, type Spacing } from "styles/utils";
+
+import { StyleBox, type Overflow, type Display, type AlignSelf } from "./style";
 
 export interface BoxProps extends BaseComponentProps {
   display?: Display;
@@ -16,10 +12,10 @@ export interface BoxProps extends BaseComponentProps {
   height?: Size;
   width?: Size;
 
-  margin?: number; // px
-  padding?: number; // px
+  margin?: Spacing;
+  padding?: Spacing;
 
-  borderRadius?: number; //px
+  borderRadius?: Spacing;
   backgroundColor?: ColorVariants;
 
   order?: number;
