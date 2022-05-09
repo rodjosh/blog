@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import Button, { ButtonProps } from "components/Atoms/Button/Button";
 
 interface ButtonLinkProps extends ButtonProps {
@@ -7,7 +8,9 @@ interface ButtonLinkProps extends ButtonProps {
 const ButtonLink = ({ href, ...restButtonProps }: ButtonLinkProps) => {
   return (
     <Link href={href} passHref>
-      <Button {...restButtonProps} />
+      <a>
+        <Button {...restButtonProps} />
+      </a>
     </Link>
   );
 };
