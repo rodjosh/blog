@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint && yarn prettier-check",
     "test": "jest",
+    "type-check": "tsc --noEmit --pretty",
     "prettier-check": "prettier -c ./",
     "prettier-format": "prettier -w ./",
     "storybook": "start-storybook -p 6006",

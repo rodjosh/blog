@@ -13,6 +13,7 @@ export const colors = {
   black: "#000000",
   grey: "#D3D3D3",
   blue: "#473BF0",
+  transparent: "transparent",
 };
 
 export type ColorVariants = keyof typeof colors;

@@ -16,7 +16,7 @@ const Navbar = () => {
         </Text>
       </ButtonLink>
 
-      <FlexBox justifyContent="center" gap="1rem">
+      <FlexBox justifyContent="center" gap={20}>
         {links.map((link) => (
           <ButtonLink key={link.label} href={link.link}>
             <TextNavItem>{link.label}</TextNavItem>
@@ -24,7 +24,7 @@ const Navbar = () => {
         ))}
       </FlexBox>
 
-      <FlexBox alignContent="center" gap="10px">
+      <FlexBox alignContent="center" gap={10}>
         <Button>
           <TextNavItem>Login</TextNavItem>
         </Button>

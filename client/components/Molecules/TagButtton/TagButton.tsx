@@ -1,12 +1,16 @@
 import Button from "components/Atoms/Button";
 import Text from "components/Atoms/Text";
+
 import { BaseComponentProps } from "types/props";
 
-interface TagButtonProps extends BaseComponentProps {}
-
-const TagButton = ({ children }: TagButtonProps) => {
+const TagButton = ({ className, children }: BaseComponentProps) => {
   return (
-    <Button backgroundColor="grey" borderRadius="35px" padding="4px 15px">
+    <Button
+      className={className ?? ""}
+      backgroundColor="grey"
+      borderRadius={35}
+      padding={[4, 15]}
+    >
       <Text fontWeight={600} size={18} color="blue">
         {children}
       </Text>

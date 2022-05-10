@@ -1,57 +1,37 @@
 import { BoxProps } from "components/Atoms/Box/Box";
 
-import { StyleFlexBox } from "./style";
+import { type Spacing } from "styles/utils";
+
+import {
+  StyleFlexBox,
+  type FlexDirection,
+  type FlexWrap,
+  type JustifyContent,
+  type AlignItems,
+  type AlignContent,
+} from "./style";
 
 interface FlexBoxProps extends Omit<BoxProps, "display"> {
-  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
-  flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
+  flexDirection?: FlexDirection;
+  flexWrap?: FlexWrap;
   flexGrow?: number;
-  justifyContent?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "space-between"
-    | "space-around"
-    | "space-evenly"
-    | "start"
-    | "end"
-    | "left"
-    | "right";
-  alignItems?:
-    | "stretch"
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "baseline"
-    | "first baseline"
-    | "last baseline"
-    | "start"
-    | "end"
-    | "self-start"
-    | "self-end";
-  alignContent?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "space-between"
-    | "space-around"
-    | "space-evenly"
-    | "stretch"
-    | "start"
-    | "end"
-    | "baseline"
-    | "first baseline"
-    | "last baseline";
-  gap?: string;
+
+  justifyContent?: JustifyContent;
+  alignItems?: AlignItems;
+  alignContent?: AlignContent;
+
+  gap?: Spacing;
 }
 
 const FlexBox = ({
   flexDirection,
   flexWrap,
   flexGrow,
+
   justifyContent,
   alignItems,
   alignContent,
+
   gap,
   ...restBoxProps
 }: FlexBoxProps) => {
