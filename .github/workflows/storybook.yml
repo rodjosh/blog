@@ -1,0 +1,18 @@
+name: Storybook
+on: [workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Storybook Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "blog-storybook-rodjosh"
+          heroku_email: "joshua.david.rodriguez.medrano@gmail.com"
+          appdir: client
+          procfile: "web: yarn storybook -p $PORT"
+        
