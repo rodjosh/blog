@@ -1,8 +1,8 @@
-name: Lint
+name: Test
 on: [push]
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -11,15 +11,9 @@ jobs:
         uses: actions/setup-node@v3.1.1
         with:
           node-version: '14'
-      - name: Lint and prettier check
+      - name: Test Next.JS Files
         working-directory: ./client
         run: |
           npm install
           npm install -g yarn
-          yarn lint
-      - name: Type check with tsc
-        working-directory: ./client
-        run: |
-          npm install
-          npm install -g yarn
-          yarn type-check
+          yarn test
