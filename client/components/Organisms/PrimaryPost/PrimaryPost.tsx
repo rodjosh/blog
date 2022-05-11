@@ -5,7 +5,7 @@ import Link from "next/link";
 import Box from "components/Atoms/Box";
 import Image from "next/image";
 
-interface PrimaryPostProps {
+export interface PrimaryPostProps {
   TextChild1?: string;
   TitleChild?: string;
   DateChild?: string;
@@ -49,7 +49,7 @@ const PrimaryPost = ({
             <Text fontWeight={700} size={28}>
               {TitleChild}
             </Text>
-            <FlexBox gap="5rem">
+            <FlexBox justifyContent="space-between">
               <Text size={14}>{DateChild}</Text>
               <Text size={14}>{TimeChild}</Text>
             </FlexBox>

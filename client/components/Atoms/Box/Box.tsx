@@ -54,6 +54,7 @@ const Box = ({
       $margin={margin}
       $padding={padding}
       $display={display}
+      $backgroundColor={backgroundColor}
       $order={order}
       $flexGrow={flexGrow}
       $flexShrink={flexShrink}
