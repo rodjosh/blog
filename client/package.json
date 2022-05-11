@@ -11,7 +11,7 @@
     "type-check": "tsc --noEmit --pretty",
     "prettier-check": "prettier -c ./",
     "prettier-format": "prettier -w ./",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
