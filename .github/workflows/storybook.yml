@@ -14,5 +14,5 @@ jobs:
           heroku_app_name: "blog-storybook-rodjosh"
           heroku_email: "joshua.david.rodriguez.medrano@gmail.com"
           appdir: client
-          procfile: "web: yarn storybook -p $PORT"
+          procfile: "web: yarn start-storybook -p $PORT"
         
