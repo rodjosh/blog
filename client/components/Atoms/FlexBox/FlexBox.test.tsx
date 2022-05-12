@@ -44,6 +44,7 @@ describe("FlexBox", () => {
       width: "25rem",
       height: "35rem",
       order: "2",
+      "flex-grow": "1",
       "align-self": "flex-start",
       "flex-direction": "column",
       "flex-wrap": "wrap",
