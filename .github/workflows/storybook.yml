@@ -1,24 +1,27 @@
-name: 'Storybook'
+# .github/workflows/chromatic.yml
 
+# Workflow name
+name: 'Chromatic'
+
+# Event for the workflow
 on: push
 
+# List of jobs
 jobs:
-  deploy:
+  chromatic-deployment:
+    # Operating System
     runs-on: ubuntu-latest
-
+    # Job steps
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.1.1
-        with:
-          node-version: '14'
-      - name: Running chromatic cli
+      - uses: actions/checkout@v1
+      - name: Install dependencies
         working-directory: ./client
-        env:
-          TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        run: |
-          npm install
-          npm install -g yarn
-          yarn chromatic --project-token "$TOKEN"
+        run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        with:
+          workingDir: ./client
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
