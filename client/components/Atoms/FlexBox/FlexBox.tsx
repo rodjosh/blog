@@ -39,7 +39,6 @@ const FlexBox = ({
     <StyleFlexBox
       $flexDirection={flexDirection}
       $flexWrap={flexWrap}
-      $flexGrow={flexGrow}
       $justifyContent={justifyContent}
       $alignItems={alignItems}
       $alignContent={alignContent}
