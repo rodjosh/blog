@@ -1,18 +1,15 @@
-name: Storybook
-on: [workflow_dispatch]
+name: 'Storybook'
+
+on: push
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Storybook Deploy
-        uses: akhileshns/heroku-deploy@v3.12.12
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "blog-storybook-rodjosh"
-          heroku_email: "joshua.david.rodriguez.medrano@gmail.com"
-          appdir: client
-          procfile: "web: yarn start-storybook -p $PORT"
-        
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
