@@ -47,5 +47,9 @@
     "jest-environment-jsdom": "^28.1.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3"
+  },
+  "resolutions": {
+    "glob-parent": "5.1.2",
+    "trim": "0.0.3"
   }
 }
