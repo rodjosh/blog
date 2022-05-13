@@ -14,7 +14,6 @@ import {
 interface FlexBoxProps extends Omit<BoxProps, "display"> {
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
-  flexGrow?: number;
 
   justifyContent?: JustifyContent;
   alignItems?: AlignItems;
@@ -26,7 +25,6 @@ interface FlexBoxProps extends Omit<BoxProps, "display"> {
 const FlexBox = ({
   flexDirection,
   flexWrap,
-  flexGrow,
 
   justifyContent,
   alignItems,
@@ -39,7 +37,6 @@ const FlexBox = ({
     <StyleFlexBox
       $flexDirection={flexDirection}
       $flexWrap={flexWrap}
-      $flexGrow={flexGrow}
       $justifyContent={justifyContent}
       $alignItems={alignItems}
       $alignContent={alignContent}
