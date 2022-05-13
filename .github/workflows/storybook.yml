@@ -1,18 +1,27 @@
-name: Storybook
-on: [workflow_dispatch]
+# .github/workflows/chromatic.yml
 
+# Workflow name
+name: 'Chromatic'
+
+# Event for the workflow
+on: push
+
+# List of jobs
 jobs:
-  deploy:
+  chromatic-deployment:
+    # Operating System
     runs-on: ubuntu-latest
-
+    # Job steps
     steps:
-      - uses: actions/checkout@v2
-      - name: Storybook Deploy
-        uses: akhileshns/heroku-deploy@v3.12.12
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        working-directory: ./client
+        run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "blog-storybook-rodjosh"
-          heroku_email: "joshua.david.rodriguez.medrano@gmail.com"
-          appdir: client
-          procfile: "web: yarn start-storybook -p $PORT"
-        
+          workingDir: ./client
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
