@@ -1,7 +1,7 @@
 import Component from "./TagButton";
 
 const config = {
-  title: "Molecules/TagButton",
+  title: "Molecules/Tag Button",
   component: Component,
 };
 

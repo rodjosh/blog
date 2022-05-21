@@ -14,9 +14,15 @@ interface TextProps {
 }
 
 export const StyleText = styled.div<TextProps>`
-  font-size: ${({ $size }) => getSpacing($size)};
-  color: ${({ $color }) => colors[$color ?? "black"]};
-  line-height: ${({ $lineHeight }) => $lineHeight ?? 1};
-  font-weight: ${({ $fontWeight }) => $fontWeight ?? "400"};
-  margin: ${({ $margin }) => getSpacing($margin)};
+  ${({ $size, $fontWeight, $lineHeight, $color, $margin }: TextProps) => {
+    let css = "";
+
+    if ($size) css += `font-size: ${getSpacing($size)};`;
+    if ($fontWeight) css += `font-weight: ${$fontWeight};`;
+    if ($color) css += `color: ${colors[$color]};`;
+    if ($lineHeight) css += `line-height: ${$lineHeight};`;
+    if ($margin) css += `margin: ${getSpacing($margin)};`;
+
+    return css;
+  }}
 `;

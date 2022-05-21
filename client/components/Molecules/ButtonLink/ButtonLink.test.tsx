@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import ButtonLink from "./ButtonLink";
+import ButtonLink from "components/Molecules/ButtonLink/ButtonLink";
 
 describe("Button", () => {
   it("Renders text", () => {

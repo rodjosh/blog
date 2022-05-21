@@ -1,5 +1,5 @@
 import Button from "components/Atoms/Button";
-import ButtonLink from "components/Atoms/ButtonLink";
+import ButtonLink from "components/Molecules/ButtonLink";
 import FlexBox from "components/Atoms/FlexBox";
 import Text from "components/Atoms/Text";
 
