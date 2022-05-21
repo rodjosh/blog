@@ -10,6 +10,7 @@ const TagButton = ({ className, children }: BaseComponentProps) => {
       backgroundColor="grey"
       borderRadius={35}
       padding={[4, 15]}
+      borderWidth={[0, 0]}
     >
       <Text fontWeight={600} size={18} color="blue">
         {children}

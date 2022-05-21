@@ -1,3 +1,4 @@
+import { Normalize } from "styled-normalize";
 import { GlobalStyle } from "../styles/theme";
 
 export const parameters = {
@@ -13,6 +14,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <>
+      <Normalize />
       <GlobalStyle />
       <Story />
     </>
