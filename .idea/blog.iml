@@ -5,10 +5,6 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/server/.cache" />
-      <excludeFolder url="file://$MODULE_DIR$/server/build" />
-      <excludeFolder url="file://$MODULE_DIR$/server/.tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/client/storybook-static" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
