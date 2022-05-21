@@ -5,6 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   
   * {
     font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    color: black;
   }
 `;
 

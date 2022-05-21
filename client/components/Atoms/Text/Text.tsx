@@ -3,15 +3,15 @@ import { BaseComponentProps } from "types/props";
 import { ColorVariants } from "styles/theme";
 import { type Spacing } from "styles/utils";
 
-import { StyleText, Weight } from "./style";
+import { StyleText, Weight, TextDecoration } from "./style";
 
 export interface TextProps extends BaseComponentProps {
   size?: number; //px
   color?: ColorVariants;
   margin?: Spacing;
-
   lineHeight?: number;
   fontWeight?: Weight;
+  textDecoration?: TextDecoration;
 }
 
 const Text = ({
@@ -21,6 +21,8 @@ const Text = ({
 
   lineHeight,
   fontWeight,
+
+  textDecoration,
 
   className,
   children,
@@ -33,6 +35,7 @@ const Text = ({
       $margin={margin}
       $lineHeight={lineHeight}
       $fontWeight={fontWeight}
+      $textDecoration={textDecoration}
     >
       {children}
     </StyleText>

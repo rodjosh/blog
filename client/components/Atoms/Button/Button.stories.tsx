@@ -7,4 +7,13 @@ const config = {
 
 export default config;
 
-export const Button = () => <Component>Hello World</Component>;
+export const Button = () => (
+  <Component
+    borderWidth={[0, 0]}
+    backgroundColor="blue"
+    borderRadius={10}
+    padding={[10, 25]}
+  >
+    Hello World
+  </Component>
+);

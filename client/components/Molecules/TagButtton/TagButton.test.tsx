@@ -17,12 +17,12 @@ describe("Button", () => {
     expect(button).toHaveStyle({
       backgroundColor: "#D3D3D3",
       borderRadius: "35px",
-      padding: "4px 15px",
+      padding: "5px 15px",
     });
 
     expect(text).toHaveStyle({
       fontWeight: "600",
-      fontSize: "18px",
+      fontSize: "14px",
       color: "#473BF0",
     });
   });
