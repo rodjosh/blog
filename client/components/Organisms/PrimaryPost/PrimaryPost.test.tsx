@@ -40,13 +40,13 @@ describe("PrimaryPost", () => {
 
     expect(textTitle).toHaveStyle({
       fontWeight: "700",
-      fontSize: "28px",
+      fontSize: "20px",
     });
     expect(textDate).toHaveStyle({
-      fontSize: "14px",
+      fontSize: "15px",
     });
     expect(textTime).toHaveStyle({
-      fontSize: "14px",
+      fontSize: "15px",
     });
 
     expect(link).toHaveAttribute("href", "/");
