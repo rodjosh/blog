@@ -25,14 +25,26 @@ interface ButtonProps {
 }
 
 export const StyleButton = styled.button<ButtonProps>`
-  background-color: ${({ $backgroundColor }) =>
-    colors[$backgroundColor ?? "transparent"]};
+  ${({
+    $backgroundColor,
+    $borderStyle,
+    $borderRadius,
+    $borderColor,
+    $borderWidth,
+    $padding,
+    $margin,
+  }: ButtonProps) => {
+    let css = "";
 
-  border-style: ${({ $borderStyle }) => $borderStyle ?? "none"};
-  border-radius: ${({ $borderRadius }) => getSpacing($borderRadius)};
-  border-color: ${({ $borderColor }) => colors[$borderColor ?? "transparent"]};
-  border-width: ${({ $borderWidth }) => getSpacing($borderWidth)};
+    if ($backgroundColor)
+      css += `background-color: ${colors[$backgroundColor]};`;
+    if ($borderStyle) css += `border-style: ${$borderStyle};`;
+    if ($borderRadius) css += `border-radius: ${getSpacing($borderRadius)};`;
+    if ($borderColor) css += `border-color: ${colors[$borderColor]};`;
+    if ($borderWidth) css += `border-width: ${getSpacing($borderWidth)};`;
+    if ($padding) css += `padding: ${getSpacing($padding)};`;
+    if ($margin) css += `margin: ${getSpacing($margin)};`;
 
-  padding: ${({ $padding }) => getSpacing($padding)};
-  margin: ${({ $margin }) => getSpacing($margin)};
+    return css;
+  }}
 `;

@@ -7,4 +7,8 @@ const config = {
 
 export default config;
 
-export const Box = () => <Component>Hello World</Component>;
+export const Box = () => (
+  <Component borderRadius={8} backgroundColor="blue" padding={[10, 20]}>
+    Hello World
+  </Component>
+);

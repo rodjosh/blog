@@ -9,9 +9,10 @@ const TagButton = ({ className, children }: BaseComponentProps) => {
       className={className ?? ""}
       backgroundColor="grey"
       borderRadius={35}
-      padding={[4, 15]}
+      padding={[5, 15]}
+      borderWidth={[0, 0]}
     >
-      <Text fontWeight={600} size={18} color="blue">
+      <Text fontWeight={600} size={14} color="blue">
         {children}
       </Text>
     </Button>

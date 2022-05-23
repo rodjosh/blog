@@ -30,10 +30,10 @@ const PrimaryPost = ({
       <a>
         <FlexBox
           flexDirection="column"
-          gap={20}
           height={430}
           width={350}
           borderRadius={15}
+          overflow="hidden"
         >
           {!img ? (
             <FlexBox backgroundColor="grey" height={250} width={350} />
@@ -47,12 +47,12 @@ const PrimaryPost = ({
             <Box>
               <TagButton>{TextChild1}</TagButton>
             </Box>
-            <Text fontWeight={700} size={28}>
+            <Text fontWeight={700} size={20}>
               {TitleChild}
             </Text>
             <FlexBox justifyContent="space-between">
-              <Text size={14}>{DateChild}</Text>
-              <Text size={14}>{TimeChild}</Text>
+              <Text size={15}>{DateChild}</Text>
+              <Text size={15}>{TimeChild}</Text>
             </FlexBox>
           </FlexBox>
         </FlexBox>

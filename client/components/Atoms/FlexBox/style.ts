@@ -60,12 +60,25 @@ interface FlexBoxProps extends BoxProps {
 export const StyleFlexBox = styled(Box).attrs(() => ({
   display: "flex",
 }))<FlexBoxProps>`
-  flex-direction: ${({ $flexDirection }) => $flexDirection ?? "row"};
-  flex-wrap: ${({ $flexWrap }) => $flexWrap ?? "nowrap"};
+  ${({
+    $flexDirection,
+    $flexWrap,
+    $flexGrow,
+    $justifyContent,
+    $alignItems,
+    $alignContent,
+    $gap,
+  }: FlexBoxProps) => {
+    let css = "";
 
-  justify-content: ${({ $justifyContent }) => $justifyContent ?? "flex-start"};
-  align-items: ${({ $alignItems }) => $alignItems ?? "stretch"};
-  align-content: ${({ $alignContent }) => $alignContent ?? "normal"};
+    if ($flexDirection) css += `flex-direction: ${$flexDirection};`;
+    if ($flexWrap) css += `flex-wrap: ${$flexWrap};`;
+    if ($flexGrow) css += `flex-grow: ${$flexGrow};`;
+    if ($justifyContent) css += `justify-content: ${$justifyContent};`;
+    if ($alignItems) css += `align-items: ${$alignItems};`;
+    if ($alignContent) css += `align-content: ${$alignContent};`;
+    if ($gap) css += `gap: ${getSpacing($gap)};`;
 
-  gap: ${({ $gap }) => getSpacing($gap)};
+    return css;
+  }}
 `;

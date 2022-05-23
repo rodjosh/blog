@@ -9,7 +9,11 @@ const ButtonLink = ({ href, ...restButtonProps }: ButtonLinkProps) => {
   return (
     <Link href={href} passHref>
       <a>
-        <Button {...restButtonProps} />
+        <Button
+          borderWidth={[0, 0]}
+          backgroundColor="transparent"
+          {...restButtonProps}
+        />
       </a>
     </Link>
   );

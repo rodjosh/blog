@@ -1,9 +1,9 @@
 import Button from "components/Atoms/Button";
-import ButtonLink from "components/Atoms/ButtonLink";
+import ButtonLink from "components/Molecules/ButtonLink";
 import FlexBox from "components/Atoms/FlexBox";
 import Text from "components/Atoms/Text";
 
-import { TextNavItem } from "components/Organisms/Navbar/variants";
+import { TextNavItem } from "./variants";
 
 import { links } from "data/links";
 
@@ -16,7 +16,7 @@ const Navbar = () => {
         </Text>
       </ButtonLink>
 
-      <FlexBox justifyContent="center" gap={20}>
+      <FlexBox alignItems="center" justifyContent="center" gap={20}>
         {links.map((link) => (
           <ButtonLink key={link.label} href={link.link}>
             <TextNavItem>{link.label}</TextNavItem>
@@ -25,7 +25,7 @@ const Navbar = () => {
       </FlexBox>
 
       <FlexBox alignContent="center" gap={10}>
-        <Button>
+        <Button backgroundColor="transparent" borderWidth={[0, 0]}>
           <TextNavItem>Login</TextNavItem>
         </Button>
 
@@ -33,7 +33,7 @@ const Navbar = () => {
           <TextNavItem>/</TextNavItem>
         </FlexBox>
 
-        <Button>
+        <Button backgroundColor="transparent" borderWidth={[0, 0]}>
           <TextNavItem>Register</TextNavItem>
         </Button>
       </FlexBox>

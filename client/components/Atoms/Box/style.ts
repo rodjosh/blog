@@ -42,22 +42,38 @@ interface BoxProps {
 }
 
 export const StyleBox = styled.div<BoxProps>`
-  display: ${({ $display }) => $display ?? "block"};
-  overflow: ${({ $overflow }) => $overflow ?? "auto"};
+  ${({
+    $display,
+    $overflow,
+    $height,
+    $width,
+    $margin,
+    $padding,
+    $borderRadius,
+    $backgroundColor,
+    $flexGrow,
+    $flexShrink,
+    $flexBasis,
+    $alignSelf,
+    $order,
+  }: BoxProps) => {
+    let css = "";
 
-  height: ${({ $height }) => getSize($height)};
-  width: ${({ $width }) => getSize($width)};
+    if ($display) css += `display: ${$display};`;
+    if ($overflow) css += `overflow: ${$overflow};`;
+    if ($height) css += `height: ${getSize($height)};`;
+    if ($width) css += `width: ${getSize($width)};`;
+    if ($margin) css += `margin: ${getSpacing($margin)};`;
+    if ($padding) css += `padding: ${getSpacing($padding)};`;
+    if ($borderRadius) css += `border-radius: ${getSpacing($borderRadius)};`;
+    if ($backgroundColor)
+      css += `background-color: ${colors[$backgroundColor]};`;
+    if ($flexGrow) css += `flex-grow: ${$flexGrow};`;
+    if ($flexShrink) css += `flex-shrink: ${$flexShrink};`;
+    if ($flexBasis) css += `flex-basis: ${$flexBasis};`;
+    if ($alignSelf) css += `align-self: ${$alignSelf};`;
+    if ($order) css += `order: ${$order}`;
 
-  margin: ${({ $margin }) => getSpacing($margin)};
-  padding: ${({ $padding }) => getSpacing($padding)};
-
-  border-radius: ${({ $borderRadius }) => getSpacing($borderRadius)};
-  background-color: ${({ $backgroundColor }) =>
-    colors[$backgroundColor ?? "transparent"]};
-
-  flex-grow: ${({ $flexGrow }) => $flexGrow ?? "unset"};
-  flex-shrink: ${({ $flexShrink }) => $flexShrink ?? "unset"};
-  flex-basis: ${({ $flexBasis }) => $flexBasis ?? "auto"};
-  align-self: ${({ $alignSelf }) => $alignSelf ?? "auto"};
-  order: ${({ $order }) => $order ?? "0"};
+    return css;
+  }}
 `;

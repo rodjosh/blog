@@ -1,7 +1,7 @@
 import Component from "./FlexBox";
 
 const config = {
-  title: "Atoms/FlexBox",
+  title: "Atoms/Flex Box",
   component: Component,
 };
 
