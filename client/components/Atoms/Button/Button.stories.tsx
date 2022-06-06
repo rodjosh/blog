@@ -9,10 +9,11 @@ export default config;
 
 export const Button = () => (
   <Component
-    borderWidth={[0, 0]}
+    borderWidth={4}
     backgroundColor="blue"
     borderRadius={10}
     padding={[10, 25]}
+    borderColor="white"
   >
     Hello World
   </Component>

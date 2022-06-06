@@ -1,26 +1,28 @@
+import routes from "routes";
+
 export const links = [
   {
-    link: "/",
+    link: routes.home,
     label: "Home",
   },
   {
-    link: "/",
+    link: routes.pages,
     label: "Pages",
   },
   {
-    link: "/",
+    link: routes.technologies,
     label: "Technologies",
   },
   {
-    link: "/",
+    link: routes.accessories,
     label: "Accessories",
   },
   {
-    link: "/",
+    link: routes.blog,
     label: "Blog",
   },
   {
-    link: "/",
+    link: routes.contactUs,
     label: "Contact Us",
   },
 ];
