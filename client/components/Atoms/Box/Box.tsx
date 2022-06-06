@@ -17,6 +17,8 @@ export interface BoxProps extends BaseComponentProps {
 
   borderRadius?: Spacing;
   backgroundColor?: ColorVariants;
+  borderColor?: ColorVariants;
+  borderWidth?: Spacing;
 
   order?: number;
   flexGrow?: number;
@@ -39,6 +41,8 @@ const Box = ({
 
   borderRadius,
   backgroundColor,
+  borderColor,
+  borderWidth,
 
   order,
   flexGrow,
@@ -57,6 +61,8 @@ const Box = ({
       $padding={padding}
       $borderRadius={borderRadius}
       $backgroundColor={backgroundColor}
+      $borderColor={borderColor}
+      $borderWidth={borderWidth}
       $order={order}
       $flexGrow={flexGrow}
       $flexShrink={flexShrink}

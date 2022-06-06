@@ -33,6 +33,8 @@ interface BoxProps {
 
   $borderRadius?: Spacing;
   $backgroundColor?: ColorVariants;
+  $borderColor?: ColorVariants;
+  $borderWidth?: Spacing;
 
   $order?: number;
   $flexGrow?: number;
@@ -51,6 +53,8 @@ export const StyleBox = styled.div<BoxProps>`
     $padding,
     $borderRadius,
     $backgroundColor,
+    $borderColor,
+    $borderWidth,
     $flexGrow,
     $flexShrink,
     $flexBasis,
@@ -68,6 +72,8 @@ export const StyleBox = styled.div<BoxProps>`
     if ($borderRadius) css += `border-radius: ${getSpacing($borderRadius)};`;
     if ($backgroundColor)
       css += `background-color: ${colors[$backgroundColor]};`;
+    if ($borderColor) css += `border-color: ${colors[$borderColor]};`;
+    if ($borderWidth) css += `border-width: ${getSpacing($borderWidth)};`;
     if ($flexGrow) css += `flex-grow: ${$flexGrow};`;
     if ($flexShrink) css += `flex-shrink: ${$flexShrink};`;
     if ($flexBasis) css += `flex-basis: ${$flexBasis};`;
